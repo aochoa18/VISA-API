@@ -2,7 +2,12 @@ import { createEncryptedPayload } from '@services/encrypt'
 import { NextFunction, Request, Response } from 'express'
 
 export const encryptMiddleware =
-  () => (req: Request, _res: Response, next: NextFunction) => {
-    req.body = createEncryptedPayload(req.body)
+  () => 
+    async (req: Request, _res: Response, next: NextFunction) => {
+    try {
+      req.body = await createEncryptedPayload(req.body)
+    } catch (error) {
+      return next(error)
+    }
     next()
   }
