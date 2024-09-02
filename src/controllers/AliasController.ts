@@ -16,8 +16,10 @@ export const getAlias = async (req: Request<{ aliasId: string }>,res: Response,)
 export const postAlias = async (req: Request, res: Response) => {
   try {
     console.log('test alias post');
-    const resp = await axios.post(`${API_URL_BASE}/aliases`, req.body)
-    res.status(resp.status).send(resp.data)
+    console.log(req.body);
+    res.send(req.body);
+    // const resp = await axios.post(`${API_URL_BASE}/aliases`, req.body)
+    // res.status(resp.status).send(resp.data)
   } catch (error) {
     console.log(error);
     res.status(500).send('Internal error')

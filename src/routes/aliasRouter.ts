@@ -3,7 +3,7 @@ import {
   getAlias,
   postAlias,
   putAlias,
-} from '@controllers/aliasController'
+} from '@controllers/AliasController'
 import { Router } from 'express'
 //import { encryptMiddleware } from 'src/middleware/encryptMiddleware'
 

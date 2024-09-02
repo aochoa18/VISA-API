@@ -14,6 +14,7 @@ export async function fetchDecryptedPayload(
       : encryptedPayloadString;
 
   // Cargar la clave privada desde el archivo
+  console.log(path.resolve(__dirname, '../../mle_key.pem'))
   const mle_key = fs.readFileSync(
     path.resolve(__dirname, '../../mle_key.pem'),
     'utf8'
